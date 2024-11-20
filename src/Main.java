@@ -1,3 +1,4 @@
+import java.lang.runtime.SwitchBootstraps;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,10 @@ public class Main {
 
         switch (userChoice) {
             case 1:
-                
+                int roomSelection = getRoomType(input);
+                int sizeSelection = getSize(roomSelection,input);
+                double priceofRoomSize = getPriceRoom(roomSelection,sizeSelection);
+                System.out.println("PRICE = "+ priceofRoomSize); //TEST
                 break;
         
             case 0:
@@ -27,4 +31,88 @@ public class Main {
     private static void welcome() {
         System.out.println("WELCOME TO HOTEL DE LUNA");
     }
-}
+    //ADDED GUEST CHARGE CALCULATION, RETURN TYPE DOUBLE
+    static double guestCharge(double totalBill){ 
+        double charge = totalBill * 0.10;
+        return charge;
+   }
+    static int getRoomType(Scanner userRoomchoice){
+        System.out.println("Select your Room Type");
+        System.out.print("[1] Standard\n[2] Deluxe\n[3] Suite\n");
+        System.out.print("~> ");
+        return userRoomchoice.nextInt();
+    }
+    static int getSize(int roomType, Scanner input){
+        switch (roomType) {
+            case 1:
+                System.out.println("Select Size");
+                System.out.print("[1] Single (1800.00) \n[2] Double (2700.00)\n");
+                break;
+            case 2:
+                System.out.println("Select Size");
+                System.out.print("[1] Single (2300.00) \n[2] Double (3200.00)\n");
+                break;
+            case 3:
+                System.out.println("Select Size");
+                System.out.print("[1] Single (3000.00) \n[2] Double (4000.00)\n");
+                break;
+            default:
+                break;
+        }
+        System.out.print("~> ");
+        return input.nextInt();
+    }
+    static double getPriceRoom(int getRoomType, int userSizeChoice){
+        double userChoicePrice = 0;
+        double singleOccupancy , doubleOccupancy;
+        switch (getRoomType){
+            case 1://STANDARD
+                singleOccupancy = 1800.00;
+                doubleOccupancy = 2700.00;
+                switch (userSizeChoice) {
+                    case 1:
+                        userChoicePrice = singleOccupancy;
+                        break;
+                    case 2:
+                        userChoicePrice = doubleOccupancy;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case 2://DELUXE
+                singleOccupancy = 2300.00;
+                doubleOccupancy = 3200.00;
+                switch (userSizeChoice) {
+                    case 1:
+                        userChoicePrice = singleOccupancy;
+                        break;
+                    case 2:
+                        userChoicePrice = doubleOccupancy;
+                        break;
+                    default:
+                        break;
+            }
+                break;
+            case 3://SUITE
+                singleOccupancy = 3000.00;
+                doubleOccupancy = 4000.00;
+                switch (userSizeChoice) {
+                    case 1:
+                        userChoicePrice = singleOccupancy;
+                        break;
+                    case 2:
+                        userChoicePrice = doubleOccupancy;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+        return userChoicePrice;
+    }
+    }
+
+    
