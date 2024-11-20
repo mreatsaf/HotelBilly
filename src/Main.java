@@ -14,9 +14,9 @@ public class Main {
 
         switch (userChoice) {
             case 1:
-                int roomSelection = getRoomType(input);
-                int sizeSelection = getSize(roomSelection,input);
-                double priceofRoomSize = getPriceRoom(roomSelection,sizeSelection);
+                int inputRoomSelection = getRoomType(input);
+                int inputSizeSelection = getSize(inputRoomSelection,input);
+                double priceofRoomSize = getPriceRoom(inputRoomSelection,inputSizeSelection);
                 System.out.println("PRICE = "+ priceofRoomSize); //TEST
                 break;
         
