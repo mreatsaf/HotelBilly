@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Would you like to Book a night or Exit?");
         System.out.println("[1] Book a night");
         System.out.println("[0] Book a night");
+        System.out.println("Hi jj");
         System.out.print("~> ");
         int userChoice = input.nextInt();
 
