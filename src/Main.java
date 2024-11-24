@@ -15,7 +15,7 @@ public class Main {
             case 1:
                 int inputRoomSelection = getRoomType(input);
                 int inputSizeSelection = getSize(inputRoomSelection,input);
-                int priceofRoomSize = (int)getPriceRoom(inputRoomSelection,inputSizeSelection);
+                int priceofRoomSize = getPriceRoom(inputRoomSelection,inputSizeSelection);
                 System.out.println("PRICE = "+ priceofRoomSize); //TEST
                 break;
         
@@ -61,13 +61,13 @@ public class Main {
         System.out.print("~> ");
         return input.nextInt();
     }
-    private static double getPriceRoom(int getRoomType, int userSizeChoice){
-        double userChoicePrice = 0;
-        double singleOccupancy , doubleOccupancy;
+    private static int getPriceRoom(int getRoomType, int userSizeChoice){
+        int userChoicePrice = 0;
+        int singleOccupancy , doubleOccupancy;
         switch (getRoomType){
             case 1://STANDARD
-                singleOccupancy = 1800.00;
-                doubleOccupancy = 2700.00;
+                singleOccupancy = 1800;
+                doubleOccupancy = 2700;
                 switch (userSizeChoice) {
                     case 1:
                         userChoicePrice = singleOccupancy;
@@ -80,8 +80,8 @@ public class Main {
                 }
                 break;
             case 2://DELUXE
-                singleOccupancy = 2300.00;
-                doubleOccupancy = 3200.00;
+                singleOccupancy = 2300;
+                doubleOccupancy = 3200;
                 switch (userSizeChoice) {
                     case 1:
                         userChoicePrice = singleOccupancy;
@@ -94,8 +94,8 @@ public class Main {
             }
                 break;
             case 3://SUITE
-                singleOccupancy = 3000.00;
-                doubleOccupancy = 4000.00;
+                singleOccupancy = 3000;
+                doubleOccupancy = 4000;
                 switch (userSizeChoice) {
                     case 1:
                         userChoicePrice = singleOccupancy;
