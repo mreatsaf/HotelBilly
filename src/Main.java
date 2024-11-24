@@ -1,4 +1,3 @@
-import java.lang.runtime.SwitchBootstraps;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +15,7 @@ public class Main {
             case 1:
                 int inputRoomSelection = getRoomType(input);
                 int inputSizeSelection = getSize(inputRoomSelection,input);
-                double priceofRoomSize = getPriceRoom(inputRoomSelection,inputSizeSelection);
+                int priceofRoomSize = (int)getPriceRoom(inputRoomSelection,inputSizeSelection);
                 System.out.println("PRICE = "+ priceofRoomSize); //TEST
                 break;
         
@@ -32,17 +31,17 @@ public class Main {
         System.out.println("WELCOME TO HOTEL DE LUNA");
     }
     //ADDED GUEST CHARGE CALCULATION, RETURN TYPE DOUBLE
-    static double guestCharge(double totalBill){ 
+    private static double guestCharge(double totalBill){ 
         double charge = totalBill * 0.10;
         return charge;
    }
-    static int getRoomType(Scanner userRoomchoice){
+    private static int getRoomType(Scanner userRoomchoice){
         System.out.println("Select your Room Type");
         System.out.print("[1] Standard\n[2] Deluxe\n[3] Suite\n");
         System.out.print("~> ");
         return userRoomchoice.nextInt();
     }
-    static int getSize(int roomType, Scanner input){
+    private static int getSize(int roomType, Scanner input){
         switch (roomType) {
             case 1:
                 System.out.println("Select Size");
@@ -62,7 +61,7 @@ public class Main {
         System.out.print("~> ");
         return input.nextInt();
     }
-    static double getPriceRoom(int getRoomType, int userSizeChoice){
+    private static double getPriceRoom(int getRoomType, int userSizeChoice){
         double userChoicePrice = 0;
         double singleOccupancy , doubleOccupancy;
         switch (getRoomType){
@@ -113,6 +112,6 @@ public class Main {
         }
         return userChoicePrice;
     }
-    }
+}
 
     
