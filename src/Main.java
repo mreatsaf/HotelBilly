@@ -15,8 +15,9 @@ public class Main {
             case 1:
                 int inputRoomSelection = getRoomType(input);
                 int inputSizeSelection = getSize(inputRoomSelection,input);
-                int priceofRoomSize = getPriceRoom(inputRoomSelection,inputSizeSelection); //TEST
-                
+                int priceofRoomSize = getPriceRoom(inputRoomSelection,inputSizeSelection);
+                System.out.println("PRICE = "+ priceofRoomSize); //TEST
+                            
                 //izzy
                 int nightofStay = getHowManyNights(input);
 
