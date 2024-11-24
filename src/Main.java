@@ -124,10 +124,3 @@ public class Main {
         return input.nextInt();
     }
 }
-
-    }
-
-    private static void welcome() {
-        System.out.println("WELCOME TO HOTEL DE LUNA");
-    }
-}
